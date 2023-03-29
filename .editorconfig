@@ -1,0 +1,23 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# Defaults to tab indentation (4 wide)
+[*]
+charset = utf-8
+end_of_line = LF
+indent_style = space
+insert_final_newline = true
+tab_width = 2
+trim_trailing_whitespace = true
+
+# 2 space indentation for all json and y(a)ml files
+[*.{json,yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# Don't trim trailing whitespace for Markdown files.
+# Remember, trailing spaces in markdown are used to differentiate line breaks and paragraphs
+[*.md]
+trim_trailing_whitespace = false
