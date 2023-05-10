@@ -30,7 +30,7 @@ export const Header: FC<HeaderProps> = ({ links }) => {
   ));
 
   return (
-    <MHeader height={60} mb={120}>
+    <MHeader height={60} mb={20}>
       <Container className={classes.header}>
         <a
           href={APP_PATHS.root}

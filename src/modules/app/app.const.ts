@@ -5,10 +5,10 @@ export const APP_PATHS = {
 export const APP_HEADER_LINKS = [
   {
     label: "Art",
-    path: "/art",
+    path: "/artworks",
   },
   {
-    label: "Pagina 2",
-    path: "/test-2",
+    label: "Exhibitions",
+    path: "/exhibitions",
   },
 ];

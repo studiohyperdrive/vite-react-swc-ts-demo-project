@@ -1,7 +1,9 @@
 export interface CardProps {
+  id: number;
   medium: string;
   title: string;
   artistDisplayName: string;
   image: string;
-  artistDisplayBio: string;
+  creditLine: string;
+  onClick: (id: number) => void;
 }
