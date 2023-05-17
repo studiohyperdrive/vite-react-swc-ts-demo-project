@@ -16,7 +16,7 @@ export const artworksSlice = createSlice({
   reducers: {
     clearDetail: (state) => {
       state.artwork = null;
-    }
+    },
   },
   extraReducers(builder) {
     builder

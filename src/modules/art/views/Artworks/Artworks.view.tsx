@@ -1,4 +1,4 @@
-import { Button, Grid } from "@mantine/core";
+import { Button, Grid, Loader } from "@mantine/core";
 import { FC, useEffect } from "react";
 import { generatePath, useNavigate } from "react-router-dom";
 
@@ -11,7 +11,7 @@ import { useStyles } from "./Artworks.styles";
 
 export const ArtworksView: FC = () => {
   const { classes } = useStyles();
-  const { artworks, pagination, imageBaseUrl } =
+  const { artworks, pagination, imageBaseUrl, status } =
     useAppSelector(selectArtworksData);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -29,6 +29,14 @@ export const ArtworksView: FC = () => {
 
   const navigateToDetail = (id: number) => {
     navigate(generatePath(ART_PATHS.detail, { id }));
+  };
+
+  const renderLoading = () => {
+    return (
+      <div className={classes.loader}>
+        <Loader />
+      </div>
+    );
   };
 
   return (
@@ -50,13 +58,17 @@ export const ArtworksView: FC = () => {
           );
         })}
       </Grid>
-      <Button
-        m="xl"
-        onClick={fetchNextArtworks}
-        className={classes.loadMoreButton}
-      >
-        Load more
-      </Button>
+      {status === "loading" ? (
+        renderLoading()
+      ) : (
+        <Button
+          m="xl"
+          onClick={fetchNextArtworks}
+          className={classes.loadMoreButton}
+        >
+          Load more
+        </Button>
+      )}
     </>
   );
 };

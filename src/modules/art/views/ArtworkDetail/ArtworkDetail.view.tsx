@@ -37,7 +37,7 @@ export const ArtworkDetail: FC = () => {
       </Text>
       <Badge>{artwork?.classification_title}</Badge>
       <Text fz="xs" c="dimmed" mt="sm" mb="sm">
-      {artwork?.credit_line}
+        {artwork?.credit_line}
       </Text>
       <img
         src={`${imageBaseUrl}/${artwork?.image_id}/full/843,/0/default.jpg`}
